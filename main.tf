@@ -33,10 +33,14 @@ module "animal" {
 output "pet_name" {
   description = "Here is the name of your new pet!"
   value       = module.pet.name
+  sensitive   = true
+
 
 }
 
 output "animal_name" {
   description = "Here is the name of your new animal!"
   value       = module.animal.name
+  sensitive   = true
+
 }
