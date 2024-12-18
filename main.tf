@@ -22,6 +22,7 @@ module "pet" {
   source = "./terraform-random-petname"
 
   pet_name_length = var.pet_name_length
+  separator       = "." # Change the separator to a period
 }
 
 module "animal" {
@@ -34,13 +35,10 @@ output "pet_name" {
   description = "Here is the name of your new pet!"
   value       = module.pet.name
   sensitive   = true
-
-
 }
 
 output "animal_name" {
   description = "Here is the name of your new animal!"
   value       = module.animal.name
   sensitive   = true
-
 }
